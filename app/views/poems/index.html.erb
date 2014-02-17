@@ -1,0 +1,34 @@
+<h1>Wiersze</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tytuł</th>
+      <th>Incipit</th>
+      <th>Metrum</th>
+      <th>Tom</th>
+      <th>Rok</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poems.each do |poem| %>
+      <tr>
+        <td><%= poem.title %></td>
+        <td><%= poem.incipit %></td>
+        <td><%= poem.meter %></td>
+        <td><%= poem.volume %></td>
+        <td><%= poem.year %></td>
+        <td><%= link_to 'Pokaż', poem %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Dodaj wiersz', new_poem_path %>

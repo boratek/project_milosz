@@ -1,0 +1,5 @@
+<h1>Strona główna</h1>
+<% @quotes.each do |quote| %>
+      <ul> <li><%= quote.quote %> <br /><%= quote.title %></li>
+      </ul>    
+<% end %>
