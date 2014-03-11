@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @keyword.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+	<%= simple_format(@keyword.description.gsub(/\n/, '<br/>')) %>
+</p>
+
+
+<%= link_to 'Back', keywords_path %>

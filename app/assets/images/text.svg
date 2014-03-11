@@ -1,0 +1,30 @@
+
+<svg id="svg" width="550" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+    <style type="text/css"><![CDATA[
+    .blurred {
+    filter      : url(#css_blur);    font-family : sans-serif;
+    font-size   : 70px;
+    fill        : black;
+}
+    ]]></style>
+    
+    	<filter id="css_blur">
+  		 <feGaussianBlur id="blurEffect" stdDeviation="15 1"/>
+		</filter>
+		
+		<animate
+    			id            = "blurAnim"
+    			attributeName = "stdDeviation"
+    			from          = "20,1"
+    			to            = "0,0"  
+    			dur           = "5.0s"
+    			fill          = "freeze"
+    			xlink:href    = "#blurEffect"
+/>
+</defs>
+
+	<text class="blurred" x="15" y="100">Project Milosz</text>
+	
+</svg>

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217085730) do
+ActiveRecord::Schema.define(version: 20140226112825) do
+
+  create_table "keywords", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+  end
+
+  create_table "keywords_poems", id: false, force: true do |t|
+    t.integer "poem_id"
+    t.integer "keyword_id"
+  end
+
+  add_index "keywords_poems", ["poem_id", "keyword_id"], name: "index_keywords_poems_on_poem_id_and_keyword_id", unique: true
 
   create_table "poems", force: true do |t|
     t.string   "title"

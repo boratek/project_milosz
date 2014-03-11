@@ -1,0 +1,10 @@
+<svg id="background" width="1400" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	<g id="figures">
+			<polygon class="rect" points="0, 0, 0, 300, 1400, 300, 1400, 0,0"
+			style="fill: #EA863F;"/>
+			<polygon class="tri_up" points="800, 125, 900, 0, 100, 0, 700, 0"
+			style="fill: #F6F5F5;"/>
+	</g>	
+	
+</svg>

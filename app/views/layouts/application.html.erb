@@ -10,9 +10,9 @@
 
 <%= render 'layouts/header' %>
 <%= render 'layouts/shim' %>
+<div id="logo"><%= image_tag image_path('text.svg') %></div>
 
-
-<%= yield %>
+<section id="content" class="center"><%= yield %></section>
 
 
 <%= render 'layouts/footer' %>

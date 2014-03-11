@@ -8,6 +8,7 @@
       <th>Metrum</th>
       <th>Tom</th>
       <th>Rok</th>
+      <th>Słowa kluczowe</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,6 +23,12 @@
         <td><%= poem.meter %></td>
         <td><%= poem.volume %></td>
         <td><%= poem.year %></td>
+        <td><% poem.keywords.each do |keyword| %>
+                <h3 class="poem_keywords">
+                <%= link_to keyword.name, keyword %>
+                </h3>
+                <% end %></td>
+
         <td><%= link_to 'Pokaż', poem %></td>
         
       </tr>
@@ -32,3 +39,4 @@
 <br>
 
 <%= link_to 'Dodaj wiersz', new_poem_path %>
+<%= link_to 'Słowa kluczowe', keywords_path %>

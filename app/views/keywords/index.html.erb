@@ -1,0 +1,29 @@
+<h1>Listing keywords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Poems</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @keywords.each do |keyword| %>
+      <tr>
+        <td><%= link_to keyword.name, keyword %></td>
+		<td><% keyword.poems.each do |poem| %>
+		<h3 class="keyword_poems">
+		<%= link_to poem.title, poem %>
+		</h3>
+		<% end %>
+		</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

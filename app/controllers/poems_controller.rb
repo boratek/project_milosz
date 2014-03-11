@@ -1,5 +1,6 @@
 class PoemsController < ApplicationController
-  before_action :set_poem, only: [:show, :edit, :update, :destroy]
+  before_action :set_poem, only: [:show, :edit, :update, :destroy, :keyword]
+  before_action :set_keywords, only: [:new, :edit, :update, :create]
 
   # GET /poems
   # GET /poems.json
@@ -69,6 +70,12 @@ class PoemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poem_params
-      params.require(:poem).permit(:title, :incipit, :meter, :volume, :year, :poem)
+      params.require(:poem).permit(:title, :incipit, :meter, :volume, :year, :poem, {:keyword_ids => []})
+    end
+    
+    def set_keywords
+        @keywords = Keyword.find(:all).map do |keyword|
+                [ keyword.name, keyword.id ]
+        end
     end
 end
